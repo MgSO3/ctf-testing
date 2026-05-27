@@ -20,7 +20,6 @@ def login():
     password = data.get('password', '')
     
     cursor = db_conn.cursor()
-    # Vulnerability: Classic String Concatenation SQLi
     query = f"SELECT * FROM users WHERE username='{username}' AND password='{password}'"
     
     try:
